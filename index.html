@@ -97,6 +97,28 @@
     <button type="submit">Submit</button>
   </form>
 
-  <script src="main.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var savingsTypeSelect = document.getElementById("savingsType");
+    var groupSavingsDetails = document.getElementById("groupSavingsDetails");
+    var otherFrequencyForm = document.getElementById("otherFrequencyForm");
+    var otherPaymentMethodForm = document.getElementById("otherPaymentMethodForm");
+
+    savingsTypeSelect.addEventListener("change", function () {
+      var selectedValue = savingsTypeSelect.value;
+
+      if (selectedValue === "group") {
+        groupSavingsDetails.classList.remove("hidden");
+        otherFrequencyForm.classList.add("hidden");
+        otherPaymentMethodForm.classList.add("hidden");
+      } else if (selectedValue === "daily") {
+        groupSavingsDetails.classList.add("hidden");
+        otherFrequencyForm.classList.remove("hidden");
+        otherPaymentMethodForm.classList.remove("hidden");
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
