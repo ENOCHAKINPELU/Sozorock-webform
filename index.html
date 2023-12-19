@@ -25,11 +25,7 @@
     <!-- Phone Number -->
     <label for="phone">Phone Number (optional):</label>
     <input type="tel" id="phone" name="phone">
-
-    <!-- Country Code -->
-    <label for="countryCode">Country Code:</label>
-    <select id="countryCode" name="countryCode">
-      <!-- Populate with country codes -->
+   
     </select>
 
     <!-- State/Province -->
@@ -40,14 +36,14 @@
     <div id="savingsTypeSection">
       <label for="savingsType">Type of Savings:</label>
       <select id="savingsType" name="savingsType">
-      <option value="Choose option" required>Choose Option</option>
+        <option value="choose option" selected>Choose Option</option>
         <option value="group">Group savings</option>
         <option value="daily">Daily savings</option>
       </select>
 
       <!-- Group Savings Details -->
       <div id="groupSavingsDetails" class="hidden">
-        <label for="groupName">Name of Group (optional):<label>
+        <label for="groupName">Name of Group (optional):</label>
         <input type="text" id="groupName" name="groupName">
 
         <label for="groupSize">Number of Members in the Group:</label>
@@ -76,7 +72,7 @@
 
     <!-- Currency of Contribution -->
 <label for="contributionCurrency">Select Currency Of Contribution:</label>
-<select id="contributionCurrency" name="contributionCurrency">
+<select id="contributionCurrency" name ="contributionCurrency">
   <!-- Currencies will be dynamically added here using JavaScript -->
 </select>
 
@@ -98,6 +94,8 @@
     <button type="submit">Submit</button>
   </form>
 
+  <script src="main.js"></script>
+  
   <script>
   document.addEventListener("DOMContentLoaded", function () {
     var savingsTypeSelect = document.getElementById("savingsType");
@@ -118,6 +116,19 @@
         otherPaymentMethodForm.classList.remove("hidden");
       }
     });
+    
+  });
+  const currencies = ["USD", "EUR", "NGN"];
+
+  // Get the select element by its id
+  const selectElement = document.getElementById("contributionCurrency");
+
+  // Loop through the currencies array and create an option element for each currency
+  currencies.forEach(currency => {
+    const optionElement = document.createElement("option");
+    optionElement.value = currency;
+    optionElement.text = currency;
+    selectElement.appendChild(optionElement);
   });
 </script>
 
