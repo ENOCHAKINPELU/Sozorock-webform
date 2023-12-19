@@ -16,12 +16,12 @@ form {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 80%;
   max-width: 400px;
-  margin: 3rem 0;
+  margin: 20px;
 }
 
 label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 input,
@@ -31,6 +31,9 @@ button {
   padding: 10px;
   margin-bottom: 16px;
   box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  height: 3rem;
 }
 
 /* Adjust radio button positioning */
@@ -46,6 +49,7 @@ button {
   padding: 12px;
   cursor: pointer;
   border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
 button:hover {
