@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamavest Data Collection Page</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: #3498db; /* Use the desired background color */
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #2c3e50; /* Button color */
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background-color: #34495e; /* Button color on hover */
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Welcome to Chamavest Data Collection Page</h1>
+        <p>Chamavest is dedicated to understanding and enhancing your savings journey. If you're already involved in different forms of savings, we invite you to share your valuable insights with us.</p>
+        <p>Our data collection process focuses on gathering information from individuals like you who are actively participating in various savings initiatives. Your data will contribute to the development of personalized and effective savings solutions.</p>
+        <label>
+           <input type="checkbox" id="savingsCheckbox">
+           Are you currently involved in savings?
+         </label>
+         <br>
+         <button onclick="redirectIfChecked()">Continue</button>
+    </div>
+
+    <script>
+        const backgroundColors = ['#3498db', '#2980b9', '#2c3e50'];
+        let currentIndex = 0;
+
+        function learnMore() {
+            currentIndex = (currentIndex + 1) % backgroundColors.length;
+            document.body.style.backgroundColor = backgroundColors[currentIndex];
+            // Add additional actions or navigation for learning more
+        }
+    </script>
+      <script>
+    function redirectIfChecked() {
+      const savingsCheckbox = document.getElementById('savingsCheckbox');
+      if (savingsCheckbox.checked) {
+        window.location.href = 'index.html';
+      }
+    }
+  </script>
+
+</body>
+</html>
